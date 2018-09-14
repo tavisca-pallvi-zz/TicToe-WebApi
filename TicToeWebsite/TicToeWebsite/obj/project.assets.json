@@ -12224,11 +12224,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pgoel\\source\\repos\\TicToeWebsite\\TicToeWebsite\\TicToeWebsite.csproj",
+      "projectUniqueName": "C:\\Users\\pgoel\\Desktop\\git\\TravelWebSite\\TicToeWebsite\\TicToeWebsite\\TicToeWebsite.csproj",
       "projectName": "TicToeWebsite",
-      "projectPath": "C:\\Users\\pgoel\\source\\repos\\TicToeWebsite\\TicToeWebsite\\TicToeWebsite.csproj",
+      "projectPath": "C:\\Users\\pgoel\\Desktop\\git\\TravelWebSite\\TicToeWebsite\\TicToeWebsite\\TicToeWebsite.csproj",
       "packagesPath": "C:\\Users\\pgoel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pgoel\\source\\repos\\TicToeWebsite\\TicToeWebsite\\obj\\",
+      "outputPath": "C:\\Users\\pgoel\\Desktop\\git\\TravelWebSite\\TicToeWebsite\\TicToeWebsite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

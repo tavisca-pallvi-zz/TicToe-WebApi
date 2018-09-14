@@ -4,39 +4,38 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TicToeWebsite.DataBaseAcces;
 using TicToeWebsite.Models;
-using TicToeWebsite.Services;
+
 
 namespace TicToeWebsite
 {
     public class LoggerAttribute : ResultFilterAttribute, IActionFilter
     {
-        // private LoggerService logService = new LoggerService();
-        GetInstance
 
         public void OnActionExecuted(ActionExecutedContext context)
         {
-            if (context.Exception.Message != "")
+            if (context.Exception== null)
+            {
+                Logger.Response = "Success";
+            }
+            else
             {
                 Logger.Response = "Failure";
                 Logger.Exception = context.Exception.Message + context.Exception.Source;
-               
 
-  
-             Log.AddLogs();
+            }
+
+            LogDatabase.Add();
         }
-       // [Exceptionss]
         public void OnActionExecuting(ActionExecutingContext context)
         {
             string req = "";
-           req = context.RouteData.Values["action"].ToString()+ context.RouteData.Values["controller"].ToString();
-            LogMessage(req)
-                 Response = "NULL";
-            Exception = "NULL";
-            //  logger.Exception = context.Exception.Message
+            req = context.RouteData.Values["action"].ToString() + context.RouteData.Values["controller"].ToString();
+            Logger.Request = req;
+            Logger.Response = "NULL";
+            Logger.Exception = "NULL";
 
-
-            // throw new NotImplementedException();
         }
     }
 }

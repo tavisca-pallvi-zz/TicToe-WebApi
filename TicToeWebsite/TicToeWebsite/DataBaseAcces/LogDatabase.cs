@@ -10,13 +10,12 @@ namespace TicToeWebsite.DataBaseAcces
 {
     public class LogDatabase
     {
-        private static LogDatabase inst = null;
-        public void Add()
+        public static void Add()
         {
             SqlConnect connOb = new SqlConnect();
             SqlConnection connection = connOb.Connect();
 
-            string query = "insert into Users values(@response,@request,@exception)";
+            string query = "insert into Logger(Response, Request, Exception) values(@response,@request,@exception)";
             SqlCommand cmd = new SqlCommand(query, connection);
 
             cmd.Parameters.Add(new SqlParameter("@response", Logger.Response));

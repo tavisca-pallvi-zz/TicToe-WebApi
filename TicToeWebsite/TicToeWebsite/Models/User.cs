@@ -13,9 +13,5 @@ namespace TicToeWebsite.Models
         public int Id;
         public string AccessToken;
 
-        //internal string GetTypeOf()
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TicToeWbsite.DataBaseAcces;
+using TicToeWebsite.Models;
+
 
 namespace TicToeWebsite.Controllers
 {
@@ -13,16 +15,18 @@ namespace TicToeWebsite.Controllers
 
     public class GameController : ControllerBase
     {
-        
-        [HttpPost]
-        [Authorize]
-        public void MovePlayer(int moveno, string apikey)
-        {
 
-            //SqlRepository conn = new SqlRepository();
-            //int userExist = conn.Search(user);
-            //if (userExist == 0)
-            //    conn.Add(user);
+        [HttpGet]
+        [Authorize]
+        [Logger]
+        [Exceptionss]
+        
+        public string MovePlayer(int boxId,int id)
+        {
+            SqlRepository conn = new SqlRepository(); //it should be singelton class
+            return TicToe.StatusOfGame(boxId, conn.GetById(id));
+
         }
+     
     }
 }

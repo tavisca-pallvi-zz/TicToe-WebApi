@@ -12,3 +12,17 @@ C:\Users\pgoel\source\repos\TicToeWebsite\TicToeWebsite\obj\Debug\netcoreapp2.1\
 C:\Users\pgoel\source\repos\TicToeWebsite\TicToeWebsite\obj\Debug\netcoreapp2.1\TicToeWebsite.dll
 C:\Users\pgoel\source\repos\TicToeWebsite\TicToeWebsite\obj\Debug\netcoreapp2.1\TicToeWebsite.pdb
 C:\Users\pgoel\source\repos\TicToeWebsite\TicToeWebsite\obj\Debug\netcoreapp2.1\TicToeWebsite.csprojAssemblyReference.cache
+C:\Users\pgoel\Desktop\git\TravelWebSite\TicToeWebsite\TicToeWebsite\obj\Debug\netcoreapp2.1\TicToeWebsite.csprojAssemblyReference.cache
+C:\Users\pgoel\Desktop\git\TravelWebSite\TicToeWebsite\TicToeWebsite\obj\Debug\netcoreapp2.1\TicToeWebsite.csproj.CoreCompileInputs.cache
+C:\Users\pgoel\Desktop\git\TravelWebSite\TicToeWebsite\TicToeWebsite\obj\Debug\netcoreapp2.1\TicToeWebsite.RazorAssemblyInfo.cache
+C:\Users\pgoel\Desktop\git\TravelWebSite\TicToeWebsite\TicToeWebsite\obj\Debug\netcoreapp2.1\TicToeWebsite.RazorAssemblyInfo.cs
+C:\Users\pgoel\Desktop\git\TravelWebSite\TicToeWebsite\TicToeWebsite\obj\Debug\netcoreapp2.1\TicToeWebsite.AssemblyInfoInputs.cache
+C:\Users\pgoel\Desktop\git\TravelWebSite\TicToeWebsite\TicToeWebsite\obj\Debug\netcoreapp2.1\TicToeWebsite.AssemblyInfo.cs
+C:\Users\pgoel\Desktop\git\TravelWebSite\TicToeWebsite\TicToeWebsite\obj\Debug\netcoreapp2.1\TicToeWebsite.dll
+C:\Users\pgoel\Desktop\git\TravelWebSite\TicToeWebsite\TicToeWebsite\obj\Debug\netcoreapp2.1\TicToeWebsite.pdb
+C:\Users\pgoel\Desktop\git\TravelWebSite\TicToeWebsite\TicToeWebsite\bin\Debug\netcoreapp2.1\TicToeWebsite.deps.json
+C:\Users\pgoel\Desktop\git\TravelWebSite\TicToeWebsite\TicToeWebsite\bin\Debug\netcoreapp2.1\TicToeWebsite.runtimeconfig.json
+C:\Users\pgoel\Desktop\git\TravelWebSite\TicToeWebsite\TicToeWebsite\bin\Debug\netcoreapp2.1\TicToeWebsite.runtimeconfig.dev.json
+C:\Users\pgoel\Desktop\git\TravelWebSite\TicToeWebsite\TicToeWebsite\bin\Debug\netcoreapp2.1\TicToeWebsite.dll
+C:\Users\pgoel\Desktop\git\TravelWebSite\TicToeWebsite\TicToeWebsite\bin\Debug\netcoreapp2.1\TicToeWebsite.pdb
+C:\Users\pgoel\Desktop\git\TravelWebSite\TicToeWebsite\TicToeWebsite\obj\Debug\netcoreapp2.1\TicToeWebsite.RazorTargetAssemblyInfo.cache

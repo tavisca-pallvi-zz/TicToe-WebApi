@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,14 +12,14 @@ namespace TicToeWbsite.DataBaseAcces
 {
     public class SqlRepository
     {
-        
+
         public int Search(User user)
         {
             string Email = user.Email;
             string no = "";
-            SqlConnection connectionobject = new SqlConnection();
-            connectionobject.ConnectionString = "data source=tavdesk004;initial catalog=UserDataBase;user id=sa;password=test123!@#";
 
+            SqlConnect connect = new SqlConnect();
+            SqlConnection connectionobject = connect.Connect();
             using (var cmd = connectionobject.CreateCommand())
             {
                 connectionobject.Open();
@@ -42,7 +43,7 @@ namespace TicToeWbsite.DataBaseAcces
         {
             SqlConnect connect = new SqlConnect();
             SqlConnection connectionobject = connect.Connect();
-           
+
             string query = "insert into Users values(@firstname,@lastname,@email,@accesstoken)";
             SqlCommand cmd = new SqlCommand(query, connectionobject);
 
@@ -76,40 +77,40 @@ namespace TicToeWbsite.DataBaseAcces
 
         }
 
-        //Int32.Parse((reader["Id"].ToString())));
-        //            Console.WriteLine(reader["FirstName"].ToString());
-        //            Console.WriteLine(reader["LastName"].ToString());
-        //            Console.WriteLine(reader["Email"].ToString());
-        //            Console.WriteLine(reader["AccessToken"].ToString());
-            
-           public int AuthenticateUser(string AccessToken)
+
+
+
+        public int AuthenticateUser(string AccessToken)
+        {
+
+            string no = "";
+            SqlConnect connect = new SqlConnect();
+            SqlConnection connectionobject = connect.Connect();
+            var cmd = connectionobject.CreateCommand();
+
+            if(connectionobject.State == ConnectionState.Closed) 
+            connectionobject.Open(); 
+
+            cmd.CommandText = "SELECT count(*) FROM Users WHERE AccessToken= @AccessToken";
+
+
+            cmd.Parameters.AddWithValue("@AccessToken", AccessToken);
+            no = cmd.ExecuteScalar().ToString();
+
+
+
+            if (no == "0")
             {
-           
-                string no = "";
-                SqlConnection connectionobject = new SqlConnection();
-                connectionobject.ConnectionString = "data source=tavdesk004;initial catalog=UserDataBase;user id=sa;password=test123!@#";
-
-                using (var cmd = connectionobject.CreateCommand())
-                {
-                    connectionobject.Open();
-                    cmd.CommandText = "SELECT count(*) FROM Users WHERE AccessToken= @AccessToken";
-
-
-                    cmd.Parameters.AddWithValue("@AccessToken", AccessToken);
-                    no = cmd.ExecuteScalar().ToString();
-
-                }
-                if (no == "0")
-                {
-                    return 0;
-
-                }
-                return 1;
+                return 0;
 
             }
 
+            return 1;
+
         }
+
     }
+}
 
 
 

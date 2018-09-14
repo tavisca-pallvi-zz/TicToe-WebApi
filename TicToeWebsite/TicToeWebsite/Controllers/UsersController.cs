@@ -17,7 +17,7 @@ namespace TicToeWebsite.Controllers
         [HttpGet]
         [Route("{id}")]
         [Logger]
-       // [Exceptionss]
+        [Exceptionss]
         public string GetUser(int id)
        {   SqlRepository conn = new SqlRepository();
             string s=conn.GetById(id);
@@ -36,6 +36,7 @@ namespace TicToeWebsite.Controllers
                 int userExist = conn.Search(user);
                 if (userExist == 0)
                     conn.Add(user);
+                else
                 throw new Exception("User Already exists");
 
 
