@@ -7,7 +7,7 @@ namespace TicToeWebsite.Models
 {
     public  class Logger
     {
-        public static int LogId;
+        public static Guid LogId;
         public static string Response;
         public static string Request;
         public static string Exception;

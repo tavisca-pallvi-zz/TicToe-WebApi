@@ -10,7 +10,7 @@ using TicToeWebsite.Models;
 
 namespace TicToeWebsite.Controllers
 {
-  [Route("api/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class UsersController : Controller
     {
@@ -19,29 +19,28 @@ namespace TicToeWebsite.Controllers
         [Logger]
         [Exceptionss]
         public string GetUser(int id)
-       {   SqlRepository conn = new SqlRepository();
-            string s=conn.GetById(id);
+        {  // SqlRepository conn = new SqlRepository();
+            CassandraRepo conn = new CassandraRepo();
+            string s = conn.GetById(id);
             return s;
         }
-
 
         [HttpPost]
         [Exceptionss]
         [Logger]
         public void RegisterUser([FromBody]User user)
         {
-           AccessKey key = new AccessKey(user);
-                key.GenerateAccessKey();
-                SqlRepository conn = new SqlRepository();
-                int userExist = conn.Search(user);
-                if (userExist == 0)
-                    conn.Add(user);
-                else
+            AccessKey key = new AccessKey(user);
+
+            key.GenerateAccessKey();
+            ReposSelected repoToBeSelected = new ReposSelected();
+            //SqlRepository conn = new SqlRepository();
+            CassandraRepo conn = new CassandraRepo();
+            int userExist = conn.Search(user);
+            if (userExist == 0)
+                conn.Add(user);
+            else
                 throw new Exception("User Already exists");
-
-
-            
-           
         }
     }
 }

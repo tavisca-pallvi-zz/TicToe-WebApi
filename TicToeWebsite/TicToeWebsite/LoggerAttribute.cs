@@ -25,7 +25,8 @@ namespace TicToeWebsite
                 Logger.Exception = context.Exception.Message + context.Exception.Source;
 
             }
-
+            Logger.LogId = Guid.NewGuid();
+            // CassendraLogger.Add();
             LogDatabase.Add();
         }
         public void OnActionExecuting(ActionExecutingContext context)

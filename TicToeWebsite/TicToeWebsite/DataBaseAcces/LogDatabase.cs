@@ -1,30 +1,32 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Cassandra;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using TicToeWebsite.Models;
+using Logger = TicToeWebsite.Models.Logger;
 
 namespace TicToeWebsite.DataBaseAcces
 {
     public class LogDatabase
+
     {
         public static void Add()
         {
-            SqlConnect connOb = new SqlConnect();
-            SqlConnection connection = connOb.Connect();
+            CassandraConnect obj = new CassandraConnect();
+            ISession session = obj.Connect();
+      
+            string query = "insert into \"LoggerT\" (\"id\", \"Response\",\"Request\",\"Exception\") values(?,?,?,?)";
 
-            string query = "insert into Logger(Response, Request, Exception) values(@response,@request,@exception)";
-            SqlCommand cmd = new SqlCommand(query, connection);
+          
+            PreparedStatement preparedStatement = session.Prepare(query);
+            BoundStatement boundStatement = preparedStatement.Bind(Logger.LogId,Logger.Response, Logger.Request, Logger.Exception);
+            session.Execute(boundStatement);
 
-            cmd.Parameters.Add(new SqlParameter("@response", Logger.Response));
-            cmd.Parameters.Add(new SqlParameter("@request", Logger.Request));
-            cmd.Parameters.Add(new SqlParameter("@exception", Logger.Exception));
 
-            cmd.ExecuteNonQuery();
-            connection.Close();
-
+            
 
         }
     }

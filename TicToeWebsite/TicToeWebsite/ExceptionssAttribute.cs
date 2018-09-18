@@ -11,7 +11,7 @@ namespace TicToeWebsite
 {
     public class ExceptionssAttribute : ActionFilterAttribute, IExceptionFilter
     {
-           public void OnException(ExceptionContext context)
+        public void OnException(ExceptionContext context)
           {
             string req = "";
             req = context.RouteData.Values["action"].ToString() + context.RouteData.Values["controller"].ToString();
